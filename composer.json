@@ -1,0 +1,25 @@
+{
+    "name": "psychedcms/psychedcms-shortcode",
+    "description": "Content link shortcode parsing and resolution for PsychedCMS",
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.3",
+        "psychedcms/psychedcms-core": "^1.0 || @dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "PsychedCms\\Shortcode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PsychedCms\\Shortcode\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

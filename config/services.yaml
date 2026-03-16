@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    _instanceof:
+        PsychedCms\Shortcode\Service\LabelFormatter\LabelFormatterInterface:
+            tags: ['psychedcms.shortcode.label_formatter']
+
+    PsychedCms\Shortcode\:
+        resource: '../src/'
+        exclude:
+            - '../src/PsychedCmsShortcodeBundle.php'
+
+    PsychedCms\Shortcode\Service\ContentTypeRegistryInterface:
+        alias: PsychedCms\Shortcode\Service\ContentTypeRegistry
+
+    PsychedCms\Shortcode\Serializer\ShortcodeNormalizer:
+        tags:
+            - { name: serializer.normalizer, priority: 63 }
