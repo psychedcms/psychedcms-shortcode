@@ -13,6 +13,7 @@ use PsychedCms\Elasticsearch\Client\ElasticsearchClientInterface;
 use PsychedCms\Shortcode\Serializer\ShortcodeNormalizer;
 use PsychedCms\Shortcode\Service\ContentTypeRegistryInterface;
 use PsychedCms\Shortcode\Service\LabelFormatter\CompositeLabelFormatter;
+use Symfony\Component\Uid\Ulid;
 use PsychedCms\Shortcode\Service\LabelFormatter\DefaultLabelFormatter;
 use PsychedCms\Shortcode\Service\ShortcodeLabelResolver;
 use PsychedCms\Shortcode\Service\ShortcodeParser;
@@ -215,9 +216,9 @@ class ContentEntityStub implements ContentInterface
     #[HtmlField]
     private ?string $bio = null;
 
-    public function getId(): ?int
+    public function getId(): ?Ulid
     {
-        return 1;
+        return new Ulid();
     }
 
     public function getSlug(): ?string
